@@ -116,6 +116,11 @@ inoremap <expr><BS> neocomplcache#smart_close_popup()."\<C-h>"
 inoremap <expr><C-y>  neocomplcache#close_popup()
 inoremap <expr><C-e>  neocomplcache#cancel_popup()
 
+" caw
+NeoBundle 'tyru/caw.vim.git'
+nmap <Leader>c <Plug>(caw:i:toggle)
+vmap <Leader>c <Plug>(caw:i:toggle)
+
 
 "" Include user's extra bundle
 if filereadable(expand("~/.vimrc.local.bundles"))
