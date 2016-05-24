@@ -200,6 +200,12 @@ endif
 
 set mousemodel=popup
 set t_Co=256
+" Once over time
+augroup vimrc-auto-cursorline
+  autocmd!
+  autocmd CursorMoved,CursorMovedI,WinLeave * setlocal nocursorline
+  autocmd CursorHold,CursorHoldI * setlocal cursorline
+augroup END
 set cursorline
 set guioptions=egmrti
 set gfn=Monospace\ 10
