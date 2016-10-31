@@ -1,0 +1,16 @@
+# インサートモードに入ったら読み込む
+[[plugins]]
+# いろいろ補完
+repo = 'Shougo/neocomplete.vim'
+on_i = 1
+# lua対応ならば
+#if = '''! has('lua')'''
+
+[[plugins]]
+# 括弧とか補完
+repo = 'jiangmiao/auto-pairs'
+# on_i = 1
+
+[[plugins]]
+# check syntax
+repo = 'scrooloose/syntastic'

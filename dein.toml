@@ -1,0 +1,83 @@
+# 基本はgithub.comのリポジトリを指定
+[[plugins]]
+repo = 'Shougo/dein.vim'
+
+[[plugins]]
+# color scheme
+repo = 'w0ng/vim-hybrid'
+
+[[plugins]]
+# commentout
+repo = 'tyru/caw.vim.git'
+
+[[plugins]]
+# 下のやつ
+repo    = 'vim-airline/vim-airline'
+depends = ['/vim-airline-themes']
+
+[[plugins]]
+repo = 'vim-airline/vim-airline-themes'
+
+[[plugins]]
+# gitの差分表示
+repo = 'airblade/vim-gitgutter'
+
+[[plugins]]
+# プログラミング言語のシンタックスとか
+repo = 'sheerun/vim-polyglot'
+
+[[plugins]]
+# vimのgrep検索を使いやすく
+repo = 'vim-scripts/grep.vim'
+
+[[plugins]]
+# white spaceを可視化
+repo = 'bronson/vim-trailing-whitespace'
+
+[[plugins]]
+# vim de shell
+repo = 'Shougo/vimshell.vim'
+
+[[plugins]]
+# vimでGitをつかう。Gstatus
+repo = 'tpope/vim-fugitive'
+
+[[plugins]]
+# Japanese help
+repo = 'vim-jp/vimdoc-ja'
+
+[[plugins]]
+# 並列で動く
+repo = 'Shougo/vimproc.vim'
+hook_post_update = '''
+  if dein#util#_is_windows()
+    let cmd = 'tools\\update-dll-mingw'
+  elseif dein#util#_is_cygwin()
+    let cmd = 'make -f make_cygwin.mak'
+  elseif executable('gmake')
+    let cmd = 'gmake'
+  else
+    let cmd = 'make'
+  endif
+  let g:dein#plugin.build = cmd
+'''
+
+# [[plugins]]
+# # 開発用
+# repo = 'mattn/webapi-vim'
+
+[[plugins]]
+# vim
+repo = 'Shougo/unite.vim'
+
+[[plugins]]
+# Unite command
+repo = 'Shougo/neomru.vim'
+#
+# [[plugins]]
+# # file explorer
+# repo = 'scrooloose/nerdtree'
+#
+# [[plugins]]
+# # NERDtree plugin
+# repo = 'jistr/vim-nerdtree-tabs.git'
