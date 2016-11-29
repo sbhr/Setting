@@ -1,7 +1,7 @@
 #!/bin/sh
 
 # とりあえずパッケージ
-sudo apt install mercurial ncurses-dev lua5.2 lua5.2-dev luajit python-dev python3-dev
+sudo apt-get install mercurial ncurses-dev lua5.2 lua5.2-dev luajit python-dev python3-dev
 
 # vimのビルド
 cd $HOME
@@ -32,7 +32,7 @@ cd vim74
 ./configure \
   --with-features=huge \
   --enable-multibyte \
-  --enable-luainterp=dynamic \
+  --enable-luainterp \
   --enable-gpm \
   --enable-cscope \
   --enable-fontset \
