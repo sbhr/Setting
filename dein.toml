@@ -81,3 +81,7 @@ repo = 'Shougo/neomru.vim'
 # [[plugins]]
 # # NERDtree plugin
 # repo = 'jistr/vim-nerdtree-tabs.git'
+
+[[plugins]]
+# undo tree
+repo = 'sjl/gundo.vim'

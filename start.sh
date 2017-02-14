@@ -32,12 +32,12 @@ else
   # Complement
   if [ ! -e /usr/local/share/bash-completion ]; then
     cd /tmp
-	wget http://bash-completion.alioth.debian.org/files/bash-completion-2.1.tar.gz
-	tar xvzf bash-completion-2.1.tar.gz
-	cd bash-completion-2.1
-	./configure
-	make
-	sudo make install
+    wget http://bash-completion.alioth.debian.org/files/bash-completion-2.1.tar.gz
+    tar xvzf bash-completion-2.1.tar.gz
+    cd bash-completion-2.1
+    ./configure
+    make
+    sudo make install
     cd /tmp
     sudo wget -P /usr/local/share/bash-completion/ https://raw.github.com/git/git/master/contrib/completion/git-completion.bash
     sudo wget -P /usr/local/share/bash-completion/ https://raw.github.com/git/git/master/contrib/completion/git-prompt.sh

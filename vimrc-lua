@@ -33,8 +33,8 @@ if dein#load_state(s:dein_dir)
   let s:lazy_toml   = g:rc_dir . '/dein_lazy.toml'
 
   " TOMLを読み込みキャッシュしておく
-  call dein#load_toml(s:toml,		{'lazy': 0})
-  call dein#load_toml(s:lazy_toml,	{'lazy': 1})
+  call dein#load_toml(s:toml,       {'lazy': 0})
+  call dein#load_toml(s:lazy_toml,  {'lazy': 1})
 
   " 設定終了
   call dein#end()
@@ -130,6 +130,7 @@ vmap <Leader>c <Plug>(caw:i:toggle)
 "--------------------------------
 " syntastic config
 "--------------------------------
+let g:syntastic_enable_signs=1
 let g:syntastic_always_populate_loc_list=1
 let g:syntastic_error_symbol='✗'
 let g:syntastic_warning_symbol='⚠'
@@ -137,6 +138,16 @@ let g:syntastic_style_error_symbol = '✗'
 let g:syntastic_style_warning_symbol = '⚠'
 let g:syntastic_auto_loc_list=1
 let g:syntastic_aggregate_errors = 1
+let g:syntastic_javascript_checkers = ['eslint'] "ESLintを使う
+let g:syntastic_mode_map = {'mode': 'passive'}
+" augroup AutoSyntastic
+"   autocmd!
+"   autocmd InsertLeave * call s:syntastic()
+" augroup END
+" function! s:syntastic()
+"   w
+"   SyntasticCheck
+" endfunction
 
 filetype plugin indent on
 
@@ -157,6 +168,23 @@ set softtabstop=0
 set shiftwidth=4
 set expandtab
 set autoindent
+if has("autocmd")
+  "sw=softtabstop, sts=shiftwidth, ts=tabstop, et=expandtabの略
+  autocmd FileType c           setlocal sw=4 sts=4 ts=4 et
+  autocmd FileType sh          setlocal sw=2 sts=2 ts=2 et
+  autocmd FileType html        setlocal sw=4 sts=4 ts=4 et
+  autocmd FileType ruby        setlocal sw=2 sts=2 ts=2 et
+  autocmd FileType js          setlocal sw=4 sts=4 ts=4 et
+  autocmd FileType zsh         setlocal sw=4 sts=4 ts=4 et
+  autocmd FileType python      setlocal sw=4 sts=4 ts=4 et
+  autocmd FileType scala       setlocal sw=4 sts=4 ts=4 et
+  autocmd FileType json        setlocal sw=4 sts=4 ts=4 et
+  autocmd FileType html        setlocal sw=4 sts=4 ts=4 et
+  autocmd FileType css         setlocal sw=4 sts=4 ts=4 et
+  autocmd FileType scss        setlocal sw=4 sts=4 ts=4 et
+  autocmd FileType sass        setlocal sw=4 sts=4 ts=4 et
+  autocmd FileType javascript  setlocal sw=2 sts=2 ts=2 et
+endif
 
 "" Map leader to ,
 let mapleader=','
