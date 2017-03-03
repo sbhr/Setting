@@ -70,3 +70,6 @@ GIT_PS1_SHOWDIRTYSTATE=true
 export PS1="\[\e[36m\]\u\[\e[0m\]@\[\e[32m\]\h\[\e[0m\]:\[\e[34m\]\w \[\e[0m\](\d \t)\n$ "
 # export PS1="\[\e[36m\]\u\[\e[0m\]@\[\e[32m\]\h\[\e[0m\]:\[\e[34m\]\w \[\e[33m\]$(__git_ps1 [%s]) \[\e[0m\](\d \t)\n$ "
 
+
+export NVM_DIR="/home/ubuntu/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
