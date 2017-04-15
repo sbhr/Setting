@@ -186,6 +186,10 @@ if has("autocmd")
   autocmd FileType javascript  setlocal sw=2 sts=2 ts=2 et
 endif
 
+"" add syntax highlight
+autocmd BufRead,BufNewFile *.ejs set filetype=html
+autocmd BufRead,BufNewFile *.tag set filetype=javascript
+
 "" Map leader to ,
 let mapleader=','
 
