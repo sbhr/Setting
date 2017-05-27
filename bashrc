@@ -17,7 +17,11 @@ else
   . /usr/local/share/bash-completion/bash_completion
   source /usr/local/share/bash-completion/git-prompt.sh
   source /usr/local/share/bash-completion/git-completion.bash
+  if [ -x /usr/bin/dircolors ]; then
+    test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
+  fi
 fi
+complete -cf sudo
 
 #alias ls='ls -GF'
 alias la='ls -lA'
