@@ -1,10 +1,7 @@
-# Alias
-alias l='ls -d .*'
-alias ll='ls -lh'
 if [ "`uname`" == "Darwin" ]; then
   # Mac OS
   alias ls='ls -GF'
-  alias vim='/usr/local/Cellar/vim/7.4.1864_1/bin/vim'
+  #alias vim='/usr/local/Cellar/vim/7.4.1864_1/bin/vim'
   if [ -f `brew --prefix`/etc/bash_completion ]; then
     . `brew --prefix`/etc/bash_completion
   fi
@@ -19,6 +16,9 @@ else
   source /usr/local/share/bash-completion/git-completion.bash
 fi
 
+# Alias
+alias l='ls -d .*'
+alias ll='ls -lh'
 #alias ls='ls -GF'
 alias la='ls -lA'
 alias mc='. /usr/libexec/mc/mc-wrapper.sh'
@@ -56,6 +56,16 @@ function ssh() {
 #  fi
 #fi
 
+# Setup ssh-agent
+if [ -f ~/.ssh-agent ]; then
+  . ~/.ssh-agent
+fi
+if [ -z "$SSH_AGENT_PID" ] || ! kill -0 $SSH_AGENT_PID; then
+  ssh-agent > ~/.ssh-agent
+  . ~/.ssh-agent
+fi
+ssh-add -l >& /dev/null || ssh-add
+
 function share_history {
   history -a
   history -c
@@ -71,5 +81,6 @@ export PS1="\[\e[36m\]\u\[\e[0m\]@\[\e[32m\]\h\[\e[0m\]:\[\e[34m\]\w \[\e[0m\](\
 # export PS1="\[\e[36m\]\u\[\e[0m\]@\[\e[32m\]\h\[\e[0m\]:\[\e[34m\]\w \[\e[33m\]$(__git_ps1 [%s]) \[\e[0m\](\d \t)\n$ "
 
 
-export NVM_DIR="/home/ubuntu/.nvm"
+export NVM_DIR="/Users/sbhr/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+export PATH=/Users/sbhr/.nodebrew/current/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin
