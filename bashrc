@@ -8,6 +8,11 @@ if [ "`uname`" == "Darwin" ]; then
   # Complement
   source /usr/local/etc/bash_completion.d/git-prompt.sh
   source /usr/local/etc/bash_completion.d/git-completion.bash
+
+  # nvm
+  export NVM_DIR="/Users/sbhr/.nvm"
+  [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+  export PATH=/Users/sbhr/.nodebrew/current/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin
 else
   # Others
   alias ls='ls -GF --color=auto'
@@ -84,7 +89,3 @@ GIT_PS1_SHOWDIRTYSTATE=true
 export PS1="\[\e[36m\]\u\[\e[0m\]@\[\e[32m\]\h\[\e[0m\]:\[\e[34m\]\w \[\e[0m\](\d \t)\n$ "
 # export PS1="\[\e[36m\]\u\[\e[0m\]@\[\e[32m\]\h\[\e[0m\]:\[\e[34m\]\w \[\e[33m\]$(__git_ps1 [%s]) \[\e[0m\](\d \t)\n$ "
 
-
-export NVM_DIR="/Users/sbhr/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-export PATH=/Users/sbhr/.nodebrew/current/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin
