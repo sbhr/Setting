@@ -28,11 +28,12 @@ repo = 'sheerun/vim-polyglot'
 
 [[plugins]]
 # vimのgrep検索を使いやすく
-repo = 'vim-scripts/grep.vim'
+# repo = 'vim-scripts/grep.vim'
 
 [[plugins]]
 # white spaceを可視化
-repo = 'bronson/vim-trailing-whitespace'
+# repo = 'bronson/vim-trailing-whitespace'
+repo = 'ntpeters/vim-better-whitespace'
 
 [[plugins]]
 # vim de shell

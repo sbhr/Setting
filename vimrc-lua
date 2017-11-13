@@ -139,6 +139,7 @@ let g:syntastic_style_warning_symbol = '⚠'
 let g:syntastic_auto_loc_list=1
 let g:syntastic_aggregate_errors = 1
 let g:syntastic_javascript_checkers = ['eslint'] "ESLintを使う
+let g:syntastic_python_checkers = ["flake8"]
 let g:syntastic_mode_map = {'mode': 'passive'}
 " augroup AutoSyntastic
 "   autocmd!
@@ -179,13 +180,17 @@ if has("autocmd")
   autocmd FileType python      setlocal sw=4 sts=4 ts=4 et
   autocmd FileType scala       setlocal sw=4 sts=4 ts=4 et
   autocmd FileType json        setlocal sw=4 sts=4 ts=4 et
-  autocmd FileType html        setlocal sw=4 sts=4 ts=4 et
+  autocmd FileType html        setlocal sw=2 sts=2 ts=2 et
   autocmd FileType css         setlocal sw=4 sts=4 ts=4 et
   autocmd FileType scss        setlocal sw=4 sts=4 ts=4 et
   autocmd FileType sass        setlocal sw=4 sts=4 ts=4 et
   autocmd FileType javascript  setlocal sw=2 sts=2 ts=2 et
   autocmd FileType ejs         setlocal sw=2 sts=2 ts=2 et
 endif
+
+"" add syntax highlight
+autocmd BufRead,BufNewFile *.ejs set filetype=html
+autocmd BufRead,BufNewFile *.tag set filetype=javascript
 
 "" Map leader to ,
 let mapleader=','

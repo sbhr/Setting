@@ -1,24 +1,33 @@
-# Alias
-alias l='ls -d .*'
-alias ll='ls -lh'
 if [ "`uname`" == "Darwin" ]; then
   # Mac OS
   alias ls='ls -GF'
-  alias vim='/usr/local/Cellar/vim/7.4.1864_1/bin/vim'
+  #alias vim='/usr/local/Cellar/vim/7.4.1864_1/bin/vim'
   if [ -f `brew --prefix`/etc/bash_completion ]; then
     . `brew --prefix`/etc/bash_completion
   fi
   # Complement
   source /usr/local/etc/bash_completion.d/git-prompt.sh
   source /usr/local/etc/bash_completion.d/git-completion.bash
+
+  # nvm
+  export NVM_DIR="/Users/sbhr/.nvm"
+  [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+  export PATH=/Users/sbhr/.nodebrew/current/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin
 else
   # Others
   alias ls='ls -GF --color=auto'
   . /usr/local/share/bash-completion/bash_completion
   source /usr/local/share/bash-completion/git-prompt.sh
   source /usr/local/share/bash-completion/git-completion.bash
+  if [ -x /usr/bin/dircolors ]; then
+    test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
+  fi
 fi
+complete -cf sudo
 
+# Alias
+alias l='ls -d .*'
+alias ll='ls -lh'
 #alias ls='ls -GF'
 alias la='ls -lA'
 alias mc='. /usr/libexec/mc/mc-wrapper.sh'
@@ -55,6 +64,16 @@ function ssh() {
 #      echo "no ssh-agent"
 #  fi
 #fi
+
+# Setup ssh-agent
+if [ -f ~/.ssh-agent ]; then
+  . ~/.ssh-agent
+fi
+if [ -z "$SSH_AGENT_PID" ] || ! kill -0 $SSH_AGENT_PID; then
+  ssh-agent > ~/.ssh-agent
+  . ~/.ssh-agent
+fi
+ssh-add -l >& /dev/null || ssh-add
 
 function share_history {
   history -a
