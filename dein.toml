@@ -74,14 +74,14 @@ repo = 'Shougo/unite.vim'
 [[plugins]]
 # Unite command
 repo = 'Shougo/neomru.vim'
-#
-# [[plugins]]
-# # file explorer
-# repo = 'scrooloose/nerdtree'
-#
-# [[plugins]]
-# # NERDtree plugin
-# repo = 'jistr/vim-nerdtree-tabs.git'
+
+[[plugins]]
+# file explorer
+repo = 'scrooloose/nerdtree'
+
+[[plugins]]
+# NERDtree plugin
+repo = 'jistr/vim-nerdtree-tabs.git'
 
 [[plugins]]
 # undo tree
