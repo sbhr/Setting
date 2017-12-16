@@ -9,10 +9,8 @@ if [ "`uname`" == "Darwin" ]; then
   source /usr/local/etc/bash_completion.d/git-prompt.sh
   source /usr/local/etc/bash_completion.d/git-completion.bash
 
-  # nvm
-  export NVM_DIR="/Users/sbhr/.nvm"
-  [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-  export PATH=/Users/sbhr/.nodebrew/current/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin
+  # Go
+  export GOPATH=/Users/sbhr/go
 else
   # Others
   alias ls='ls -GF --color=auto'
@@ -28,7 +26,6 @@ complete -cf sudo
 # Alias
 alias l='ls -d .*'
 alias ll='ls -lh'
-#alias ls='ls -GF'
 alias la='ls -lA'
 alias mc='. /usr/libexec/mc/mc-wrapper.sh'
 alias vi='vim'
