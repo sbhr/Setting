@@ -11,6 +11,7 @@ if [ "`uname`" == "Darwin" ]; then
 
   # Go
   export GOPATH=/Users/sbhr/go
+  # export PATH=/Users/sbhr/.nodebrew/current/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin
 else
   # Others
   alias ls='ls -GF --color=auto'
@@ -20,6 +21,10 @@ else
   if [ -x /usr/bin/dircolors ]; then
     test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
   fi
+  # nvm
+  export NVM_DIR="/home/shibahara/.nvm"
+  [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+  [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 fi
 complete -cf sudo
 
