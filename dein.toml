@@ -26,7 +26,7 @@ repo = 'airblade/vim-gitgutter'
 # プログラミング言語のシンタックスとか
 repo = 'sheerun/vim-polyglot'
 
-[[plugins]]
+# [[plugins]]
 # vimのgrep検索を使いやすく
 # repo = 'vim-scripts/grep.vim'
 
@@ -86,3 +86,7 @@ repo = 'Shougo/neomru.vim'
 [[plugins]]
 # undo tree
 repo = 'sjl/gundo.vim'
+
+[[plugins]]
+repo = 'fatih/vim-go'
+on_i = 1

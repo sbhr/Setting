@@ -15,7 +15,3 @@ on_i = 1
 # check syntax
 repo = 'scrooloose/syntastic'
 on_i = 1
-
-[[plugins]]
-repo = 'fatih/vim-go'
-on_i = 1
